@@ -19,13 +19,12 @@ void Xoa();
 void SapXep();
 void TimKiem();
 void In();
-void ThongKe();
 void LuuDuLieu();
 void DocDuLieu();
 int main() {
     char ch;
     dsdh = (struct DonHang**)calloc(sdh, sizeof(struct DonHang*));
-    DocDuLieu(); // Đọc dữ liệu từ tệp khi chương trình bắt đầu
+    DocDuLieu();
     while (1) {
         system("cls");
         printf("		|-----------------------------------------|\n");
@@ -43,8 +42,6 @@ int main() {
         printf("		|-----------------------------------------|\n");
         printf("		|   6.In Danh Sach Don Hang               |\n");
         printf("		|-----------------------------------------|\n");
-        printf("		|   7.Thong ke                            |\n");
-        printf("		|-----------------------------------------|\n");
         printf("		|  Bam phim khac de ket thuc.             |\n");
         printf("		|-----------------------------------------|\n");
         fflush(stdin);
@@ -55,14 +52,13 @@ int main() {
           else if (ch == '4') SapXep();
           else if (ch == '5') TimKiem();
           else if (ch == '6') In();
-          else if (ch == '7') ThongKe();
         else {
             printf("BAN CO MUON KET THUC??\n");
             printf("Bam Y hoac y de ket thuc\n");
             printf("Bam phim khac de quay lai:");
             ch = getch();
             if (ch == 'Y' || ch == 'y') {
-                LuuDuLieu(); // Lưu dữ liệu vào tệp khi chương trình kết thúc
+                LuuDuLieu(); 
                 break;
             }
         }
@@ -117,23 +113,23 @@ void Sua() {
         }
         while (1) {
             printf("\nThong tin don hang hien tai:\n");
-	    printf("\n|--------------------------------|");
-	    printf("\n|1.Madh:%-25s|",dsdh[c]->MaDh);
-	    printf("\n|--------------------------------|");
-	    printf("\n|2.sdtNguoiGui:%-18s|",dsdh[c]->sdtNguoiGui);
-	    printf("\n|--------------------------------|");
-	    printf("\n|3.TenNguoiGui:%-18s|",dsdh[c]->TenNguoiGui);
-	    printf("\n|--------------------------------|");
-	    printf("\n|4.sdtNguoiNhan:%-17s|",dsdh[c]->sdtNguoiNhan);
-	    printf("\n|--------------------------------|");
-	    printf("\n|5.TenNguoiNhan:%-17s|",dsdh[c]->TenNguoiNhan);
-	    printf("\n|--------------------------------|");
-	    printf("\n|6.TenSp:%-24s|",dsdh[c]->TenSp);
-	    printf("\n|--------------------------------|");
-	    printf("\n|7.GiaThanh:%-21s|",dsdh[c]->GiaThanh);
-	    printf("\n|--------------------------------|");
-	    printf("\n|8.TinhTrang:%-20s|",dsdh[c]->TinhTrang);
-	    printf("\n|--------------------------------|");
+	    printf("\n|------------------------------------------|");
+	    printf("\n|1.Madh:%-35s|",dsdh[c]->MaDh);
+	    printf("\n|------------------------------------------|");
+	    printf("\n|2.sdtNguoiGui:%-28s|",dsdh[c]->sdtNguoiGui);
+	    printf("\n|------------------------------------------|");
+	    printf("\n|3.TenNguoiGui:%-28s|",dsdh[c]->TenNguoiGui);
+	    printf("\n|------------------------------------------|");
+	    printf("\n|4.sdtNguoiNhan:%-27s|",dsdh[c]->sdtNguoiNhan);
+	    printf("\n|------------------------------------------|");
+	    printf("\n|5.TenNguoiNhan:%-27s|",dsdh[c]->TenNguoiNhan);
+	    printf("\n|------------------------------------------|");
+	    printf("\n|6.TenSp:%-34s|",dsdh[c]->TenSp);
+	    printf("\n|------------------------------------------|");
+	    printf("\n|7.GiaThanh:%-31s|",dsdh[c]->GiaThanh);
+	    printf("\n|------------------------------------------|");
+	    printf("\n|8.TinhTrang:%-30s|",dsdh[c]->TinhTrang);
+	    printf("\n|------------------------------------------|");
 	    printf("\n(bam 0 de ket thuc.)\n");
             chon = getch() - '0';
             if (chon == 0) break;
@@ -202,6 +198,7 @@ void Xoa() {
         }
         n--;
         printf("\nDon hang da xoa thanh cong\n");
+        printf("\nBam Phim bat ky de ket thuc.\n");
         getch();
     }
 }
@@ -261,23 +258,23 @@ void In(){
     int i;
     printf("\ndanh sach cac don hang la:");
     for(i=0;i<n;i++){
-    printf("\n|--------------------------------|");
-    printf("\n|Madh:%-27s|",dsdh[i]->MaDh);
-    printf("\n|--------------------------------|");
-    printf("\n|sdtNguoiGui:%-20s|",dsdh[i]->sdtNguoiGui);
-    printf("\n|--------------------------------|");
-    printf("\n|TenNguoiGui:%-20s|",dsdh[i]->TenNguoiGui);
-    printf("\n|--------------------------------|");
-    printf("\n|sdtNguoiNhan:%-19s|",dsdh[i]->sdtNguoiNhan);
-    printf("\n|--------------------------------|");
-    printf("\n|TenNguoiNhan:%-19s|",dsdh[i]->TenNguoiNhan);
-    printf("\n|--------------------------------|");
-    printf("\n|TenSp:%-26s|",dsdh[i]->TenSp);
-    printf("\n|--------------------------------|");
-    printf("\n|GiaThanh:%-23s|",dsdh[i]->GiaThanh);
-    printf("\n|--------------------------------|");
-    printf("\n|TinhTrang:%-22s|",dsdh[i]->TinhTrang);
-    printf("\n|--------------------------------|");
+    printf("\n|------------------------------------------|");
+    printf("\n|Madh:%-37s|",dsdh[i]->MaDh);
+    printf("\n|------------------------------------------|");
+    printf("\n|sdtNguoiGui:%-30s|",dsdh[i]->sdtNguoiGui);
+    printf("\n|------------------------------------------|");
+    printf("\n|TenNguoiGui:%-30s|",dsdh[i]->TenNguoiGui);
+    printf("\n|------------------------------------------|");
+    printf("\n|sdtNguoiNhan:%-29s|",dsdh[i]->sdtNguoiNhan);
+    printf("\n|------------------------------------------|");
+    printf("\n|TenNguoiNhan:%-29s|",dsdh[i]->TenNguoiNhan);
+    printf("\n|------------------------------------------|");
+    printf("\n|TenSp:%-36s|",dsdh[i]->TenSp);
+    printf("\n|------------------------------------------|");
+    printf("\n|GiaThanh:%-33s|",dsdh[i]->GiaThanh);
+    printf("\n|------------------------------------------|");
+    printf("\n|TinhTrang:%-32s|",dsdh[i]->TinhTrang);
+    printf("\n|------------------------------------------|");
 }
     printf("\n(bam phim bat ky de thoat)\n");
     getch();
@@ -295,57 +292,33 @@ void TimKiem(){
             strstr(dsdh[i]->TenNguoiNhan, tk) || strstr(dsdh[i]->TenSp, tk) ||
             strstr(dsdh[i]->sdtNguoiGui, tk) || strstr(dsdh[i]->sdtNguoiNhan, tk) ||
             strstr(dsdh[i]->GiaThanh, tk) || strstr(dsdh[i]->TinhTrang, tk)) {
-            printf("\n|--------------------------------|");
-    printf("\n|Madh:%-27s|",dsdh[i]->MaDh);
-    printf("\n|--------------------------------|");
-    printf("\n|sdtNguoiGui:%-20s|",dsdh[i]->sdtNguoiGui);
-    printf("\n|--------------------------------|");
-    printf("\n|TenNguoiGui:%-20s|",dsdh[i]->TenNguoiGui);
-    printf("\n|--------------------------------|");
-    printf("\n|sdtNguoiNhan:%-19s|",dsdh[i]->sdtNguoiNhan);
-    printf("\n|--------------------------------|");
-    printf("\n|TenNguoiNhan:%-19s|",dsdh[i]->TenNguoiNhan);
-    printf("\n|--------------------------------|");
-    printf("\n|TenSp:%-26s|",dsdh[i]->TenSp);
-    printf("\n|--------------------------------|");
-    printf("\n|GiaThanh:%-23s|",dsdh[i]->GiaThanh);
-    printf("\n|--------------------------------|");
-    printf("\n|TinhTrang:%-22s|",dsdh[i]->TinhTrang);
-    printf("\n|--------------------------------|");
+    printf("\n|------------------------------------------|");
+    printf("\n|Madh:%-37s|",dsdh[i]->MaDh);
+    printf("\n|------------------------------------------|");
+    printf("\n|sdtNguoiGui:%-30s|",dsdh[i]->sdtNguoiGui);
+    printf("\n|------------------------------------------|");
+    printf("\n|TenNguoiGui:%-30s|",dsdh[i]->TenNguoiGui);
+    printf("\n|------------------------------------------|");
+    printf("\n|sdtNguoiNhan:%-29s|",dsdh[i]->sdtNguoiNhan);
+    printf("\n|------------------------------------------|");
+    printf("\n|TenNguoiNhan:%-29s|",dsdh[i]->TenNguoiNhan);
+    printf("\n|------------------------------------------|");
+    printf("\n|TenSp:%-36s|",dsdh[i]->TenSp);
+    printf("\n|------------------------------------------|");
+    printf("\n|GiaThanh:%-33s|",dsdh[i]->GiaThanh);
+    printf("\n|------------------------------------------|");
+    printf("\n|TinhTrang:%-32s|",dsdh[i]->TinhTrang);
+    printf("\n|------------------------------------------|");
             found = 1;
         }
     }
-    if (!found) {
+    if (found==0) {
         printf("\nKhong tim thay don hang phu hop\n");
     }
     printf("\nBam phim bat ky de thoat\n");
     getch();
 }
 
-void ThongKe(){
-    while(1){
-        char ch;
-        int i,b,c;
-        printf("1.Thong ke so don hang theo gia thanh tu X(VND) den Y(VND).\n");
-        printf("2.Thong ke so san pham theo trang thai.\n");
-        printf("(Bam 0 de quay lai.)\n");
-        ch=getch();
-        if(ch=='0') break;
-        c=ch-'0';
-        b=ch-'1';
-        switch(c){
-            case 1:
-                // Chức năng thống kê theo giá thành chưa được thực hiện
-                break;
-            case 2:
-                // Chức năng thống kê theo trạng thái chưa được thực hiện
-                break;
-            default:
-                printf("hay lua chon lai:\n");
-                continue;
-        }
-    }
-}
 
 void LuuDuLieu() {
     FILE *file = fopen("donhang.txt", "w");
@@ -366,7 +339,6 @@ void LuuDuLieu() {
     }
     fclose(file);
 }
-
 void DocDuLieu() {
     FILE *file = fopen("donhang.txt", "r");
     if (file == NULL) {
